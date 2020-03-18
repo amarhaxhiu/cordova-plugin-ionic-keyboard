@@ -107,9 +107,11 @@ public class CDVIonicKeyboard extends CordovaPlugin {
                             } else {
                                 screenHeight = rootViewHeight;
                             }
-
+                            
+                            int statusBarHeight = Math.ceil(25 * context.getResources().getDisplayMetrics().density);
+                            
                             //int heightDiff = screenHeight + topCutoutHeight() - resultBottom; // Edit!!! - original: int heightDiff = screenHeight - resultBottom;
-                            int heightDiff = screenHeight + 24 - resultBottom;
+                            int heightDiff = screenHeight + statusBarHeight - resultBottom;
                             
                             int pixelHeightDiff = (int)(heightDiff / density);
                             if (pixelHeightDiff > 100 && pixelHeightDiff != previousHeightDiff) { // if more than 100 pixels, its probably a keyboard...
