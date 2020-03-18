@@ -26,7 +26,7 @@ import android.os.Build;
 import android.widget.FrameLayout;
 
 //import java.util.List; // Edit!!! - new
-import java.math;
+import java.math.*; 
 
 public class CDVIonicKeyboard extends CordovaPlugin {
     private OnGlobalLayoutListener list;
