@@ -150,7 +150,7 @@ public class CDVIonicKeyboard extends CordovaPlugin {
                         private int topCutoutHeight() {
                             View decorView = cordova.getActivity().getWindow().getDecorView();
                             int cutOffHeight = 0;
-                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                                 WindowInsets windowInsets = decorView.getRootWindowInsets();
                                 DisplayCutout displayCutout = windowInsets.getDisplayCutout();
                                 if (displayCutout != null) {
