@@ -12,11 +12,11 @@ import org.json.JSONException;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
-import android.view.DisplayCutout; // Edit!!! - new
+//import android.view.DisplayCutout; // Edit!!! - new
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.view.WindowInsets; // Edit!!! - new
+//import android.view.WindowInsets; // Edit!!! - new
 import android.view.inputmethod.InputMethodManager;
 
 // import additionally required classes for calculating screen height
@@ -25,7 +25,7 @@ import android.graphics.Point;
 import android.os.Build;
 import android.widget.FrameLayout;
 
-import java.util.List; // Edit!!! - new
+//import java.util.List; // Edit!!! - new
 
 public class CDVIonicKeyboard extends CordovaPlugin {
     private OnGlobalLayoutListener list;
@@ -108,8 +108,9 @@ public class CDVIonicKeyboard extends CordovaPlugin {
                                 screenHeight = rootViewHeight;
                             }
 
-                            int heightDiff = screenHeight + topCutoutHeight() - resultBottom; // Edit!!! - original: int heightDiff = screenHeight - resultBottom;
-
+                            //int heightDiff = screenHeight + topCutoutHeight() - resultBottom; // Edit!!! - original: int heightDiff = screenHeight - resultBottom;
+                            int heightDiff = screenHeight + 24 - resultBottom;
+                            
                             int pixelHeightDiff = (int)(heightDiff / density);
                             if (pixelHeightDiff > 100 && pixelHeightDiff != previousHeightDiff) { // if more than 100 pixels, its probably a keyboard...
                                 String msg = "S" + Integer.toString(pixelHeightDiff);
@@ -147,7 +148,7 @@ public class CDVIonicKeyboard extends CordovaPlugin {
                             return (r.bottom - r.top);
                         }
                         
-                        private int topCutoutHeight() {
+                        /*private int topCutoutHeight() {
                             View decorView = cordova.getActivity().getWindow().getDecorView();
                             int cutOffHeight = 0;
                             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
@@ -163,7 +164,7 @@ public class CDVIonicKeyboard extends CordovaPlugin {
                                 }
                             }
                             return cutOffHeight;
-                        } // Edit!!! - new
+                        }*/ // Edit!!! - new
                     };
 
                     mChildOfContent = content.getChildAt(0);
