@@ -110,7 +110,7 @@ public class CDVIonicKeyboard extends CordovaPlugin {
                             }
                             
                             //Context context = this.cordova.getActivity().getApplicationContext();
-                            int statusBarHeight = Math.ceil(25 * density);
+                            int statusBarHeight = (int) Math.ceil(25 * density);
                             
                             //int heightDiff = screenHeight + topCutoutHeight() - resultBottom; // Edit!!! - original: int heightDiff = screenHeight - resultBottom;
                             int heightDiff = screenHeight + statusBarHeight - resultBottom;
