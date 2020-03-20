@@ -153,7 +153,7 @@ public class CDVIonicKeyboard extends CordovaPlugin {
                             return (r.bottom - r.top);
                         }
                         
-                        private static int getScreenHeight() {
+                        private int getScreenHeight() {
                             return Resources.getSystem().getDisplayMetrics().heightPixels;
                         }
                         
